@@ -1,0 +1,55 @@
+name: docdoc
+description: "A new Flutter project."
+publish_to: 'none' 
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.3 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  #A build system for Dart code generation and modular compilation
+  build_runner: ^2.4.7
+  # State management
+  flutter_bloc: ^8.1.3
+  # Code generator (mainly used with cubit & retrofit)
+  freezed: ^2.4.5
+  freezed_annotation: ^2.4.1
+  # for dependency injection
+  get_it: ^7.6.4
+  # Automatically generate code for converting to and from JSON by annotating Dart classes
+  json_serializable: ^6.7.1
+  json_annotation: ^4.8.1
+  # Networking
+  dio: ^5.3.3
+  retrofit: ^4.0.3
+  retrofit_generator: ^8.0.4
+  pretty_dio_logger: ^1.3.1
+  # localization
+  intl: ^0.18.1
+  easy_localization: ^3.0.3
+  # for splash screen
+  flutter_native_splash: ^2.3.5
+  # An SVG rendering and widget library for Flutter, which allows painting 
+  flutter_svg: ^2.0.9
+  # for adapting screen and font size.
+  flutter_screenutil: ^5.9.0
+
+
+  cupertino_icons: ^1.0.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+
+  uses-material-design: true
+
+
+  assets:
+    - assets/images/
+    - assets/svgs/
