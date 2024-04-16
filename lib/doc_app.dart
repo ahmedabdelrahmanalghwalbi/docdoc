@@ -7,7 +7,9 @@ import 'core/routing/routes.dart';
 
 class DocApp extends StatelessWidget {
   final AppRouter appRouter;
-  const DocApp({super.key, required this.appRouter});
+  final bool showDebugBanner;
+  const DocApp(
+      {super.key, required this.appRouter, required this.showDebugBanner});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +22,7 @@ class DocApp extends StatelessWidget {
             primaryColor: ColorsManager.mainBlue,
             scaffoldBackgroundColor: Colors.white,
           ),
-          debugShowCheckedModeBanner: false,
+          debugShowCheckedModeBanner: showDebugBanner,
           initialRoute: Routes.onBoardingScreen,
           onGenerateRoute: appRouter.generateRoute,
         ));
