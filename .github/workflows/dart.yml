@@ -40,7 +40,6 @@ jobs:
 
     - name: Run Fastlane
       env:
-        FASTLANE_LANE: distribute_android # Specify the lane name here (e.g., distribute_ios)
         FIREBASE_CLI_TOKEN: ${{ secrets.FIREBASE_CLI_REFRESH_TOKEN }}
       run: |
         bundle exec fastlane android distribute_android
