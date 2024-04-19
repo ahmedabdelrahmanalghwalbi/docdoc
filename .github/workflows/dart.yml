@@ -1,0 +1,33 @@
+name: Fastlane Flutter App Distribution
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    name: Execute Fastlane Flutter App Distribution
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Ruby
+      uses: actions/setup-ruby@v1
+      with:
+        ruby-version: '2.7'
+
+    - name: Install Fastlane
+      run: |
+        gem install bundler
+        bundle install
+        bundle exec fastlane install_plugins
+
+    - name: Run Fastlane
+      env:
+        FASTLANE_LANE: distribute_android # Specify the lane name here (e.g., distribute_ios)
+        FIREBASE_CLI_TOKEN: "1//03XjpVRBknTBfCgYIARAAGAMSNwF-L9IrvzqVPTJzgQYNX0z3ajjMW7TZ3m_7TqJfzWmWPV6lgNHuuUzdWAX41K9Yz-0xir4sE3w" # You need to add your Firebase CLI token as a secret in your repository settings
+      run: |
+        bundle exec fastlane $FASTLANE_LANE
