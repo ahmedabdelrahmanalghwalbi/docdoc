@@ -60,7 +60,6 @@ android {
         production {
             dimension "default"
             resValue "string", "app_name", "DocDoc Production"
-            applicationIdSuffix ".prod"
         }
         development{
             dimension "default"
