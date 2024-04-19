@@ -8,7 +8,7 @@ platform :android do
           app: "1:342952968443:android:2b42c56108611865e8305e",
           testers: "ahmedabdelrahman4999@gmail.com, ahmedghwalby@gmail.com",
           release_notes: "Appling Authentication Flow for Android DocDoc Application",
-          firebase_cli_token:"1//03XjpVRBknTBfCgYIARAAGAMSNwF-L9IrvzqVPTJzgQYNX0z3ajjMW7TZ3m_7TqJfzWmWPV6lgNHuuUzdWAX41K9Yz-0xir4sE3w",
+          firebase_cli_token:ENV['FIREBASE_CLI_REFRESH_TOKEN'],
           android_artifact_type: "APK",
           android_artifact_path: "../build/app/outputs/flutter-apk/app-production-release.apk"
       )
