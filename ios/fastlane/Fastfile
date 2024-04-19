@@ -1,0 +1,18 @@
+platform :ios do
+  desc "Release Beta version of Docdoc application to iOS testers"
+  lane :distribute_ios do
+    sh "flutter clean"
+    sh "flutter pub get"
+    sh "flutter build ios --flavor production --target=lib/main_production.dart --no-tree-shake-icons"
+
+    # Upload the iOS build to Firebase App Distribution
+    release = firebase_app_distribution(
+      app: "1:342952968443:ios:cdf855afe797bca4e8305e", # Firebase iOS app ID
+      testers: "ahmedabdelrahman4999@gmail.com, ahmedghwalby@gmail.com",
+      release_notes: "Appling Authentication Flow for iOS DocDoc Application",
+      firebase_cli_token: "1//035lYwsA-EA0uCgYIARAAGAMSNwF-L9IrrVPMXV_73TZ9PGvnrjSYWbMpVdMGrmUMWbukMHcdOz-utHUcZ6czSXSJ1qaz_BqOWjM",
+      ios_app_distribution_groups: ["Testers"],
+      ipa_path: "../build/ios/iphoneos/Runner.ipa"
+    )
+  end
+end
